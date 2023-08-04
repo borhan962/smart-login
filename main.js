@@ -42,12 +42,10 @@ function checkSignup(url) {
         document.getElementById("exiest").innerText = " please fill all inputs"
     }else{
         localStorage.setItem("userData", JSON.stringify(userData))
+        window.location=`${url}`;
     }
         if (signUpEmail.value == data.email) {
             document.getElementById("exiest").innerText = " this email already exiest"
-        }else{
-            localStorage.setItem("userData", JSON.stringify(userData))
-            window.location=`${url}`;
         }
         clearForm()
     }
@@ -57,5 +55,9 @@ function checkSignup(url) {
   signUpEmail.value = ''
   signUpName.value = ''
   signUpPassword.value = ''
+}
+
+function logout(){
+window.location.href ="signUp.html"
 }
     
